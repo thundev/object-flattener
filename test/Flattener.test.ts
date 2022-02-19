@@ -7,8 +7,8 @@ const object: { [key: string]: any } = {
     null: null,
     array: [1, 2, 3],
     arrayOfArrays: [[1, 2], [3, 4]],
-    arrayOfObjects: [{first: '1', second: '2'}, {third: '3', forth: '4'}],
-    arrayOfMixed: [{first: '1', second: '2'}, 1, [true, false], null, {key: [1, 2, 3]}],
+    arrayOfObjects: [{ first: '1', second: '2' }, { third: '3', forth: '4' }],
+    arrayOfMixed: [{ first: '1', second: '2' }, 1, [true, false], null, { key: [1, 2, 3] }],
 };
 
 const expectedWithDotsStyle: { [key: string]: any } = {
@@ -35,7 +35,7 @@ const expectedWithDotsStyle: { [key: string]: any } = {
     'arrayOfMixed.3': null,
     'arrayOfMixed.4.key.0': 1,
     'arrayOfMixed.4.key.1': 2,
-    'arrayOfMixed.4.key.2': 3
+    'arrayOfMixed.4.key.2': 3,
 };
 
 const expectedWithArrayStyle: { [key: string]: any } = {
@@ -69,7 +69,7 @@ describe.each([
     ['array style', expectedWithArrayStyle],
     ['dot style', expectedWithDotsStyle],
 ])('this can flatten an object:', (type, expected) => {
-    test( `using ${type}`, () => {
+    test(`using ${type}`, () => {
         const result = type === 'array style'
             ? Flattener.flattenToArray(object)
             : Flattener.flattenWithDots(object);

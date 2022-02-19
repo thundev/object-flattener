@@ -4,7 +4,7 @@ class Flattener {
     public static flattenToArray(object: { [key: string]: any }) {
         Flattener.style = 'array';
         return Flattener.flatten(object);
-    };
+    }
 
     public static flattenWithDots(object: { [key: string]: any }) {
         Flattener.style = 'dots';
@@ -26,14 +26,16 @@ class Flattener {
                 return;
             }
 
+            // eslint-disable-next-line no-param-reassign
             result[newKey] = target;
         });
 
         return result;
-    };
+    }
 
-    private static getNewKey(previousKey: string|null, currentKey: string|number): string {
+    private static getNewKey(previousKey: string | null, currentKey: string | number): string {
         if (typeof currentKey === 'number') {
+            // eslint-disable-next-line no-param-reassign
             currentKey = currentKey.toString();
         }
 
