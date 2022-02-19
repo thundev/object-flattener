@@ -1,10 +1,13 @@
 import Flattener from '../src/Flattener';
 
+const file = new File([''], 'filename');
+
 const object: { [key: string]: any } = {
     number: 1,
     string: 'second',
     boolean: true,
     null: null,
+    file,
     array: [1, 2, 3],
     arrayOfArrays: [[1, 2], [3, 4]],
     arrayOfObjects: [{ first: '1', second: '2' }, { third: '3', forth: '4' }],
@@ -16,6 +19,7 @@ const expectedWithDotsStyle: { [key: string]: any } = {
     string: 'second',
     boolean: true,
     null: null,
+    file,
     'array.0': 1,
     'array.1': 2,
     'array.2': 3,
@@ -43,6 +47,7 @@ const expectedWithArrayStyle: { [key: string]: any } = {
     string: 'second',
     boolean: true,
     null: null,
+    file,
     'array[0]': 1,
     'array[1]': 2,
     'array[2]': 3,

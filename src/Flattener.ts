@@ -21,7 +21,11 @@ class Flattener {
 
             const newKey = Flattener.getNewKey(key, objectKey);
 
-            if (typeof target === 'object' && target !== null) {
+            if (
+                typeof target === 'object'
+                && target !== null
+                && !(target instanceof File)
+            ) {
                 this.flatten(target, newKey, result);
                 return;
             }
