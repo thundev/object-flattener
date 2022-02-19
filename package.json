@@ -1,0 +1,39 @@
+{
+  "name": "object-flattener",
+  "version": "0.0.1",
+  "description": "This package provides a method to flatten an object to an associative array or dot-separated form.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "lint": "eslint .",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint && npm run build",
+    "preversion": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thundev/object-flattener.git"
+  },
+  "keywords": [
+    "object",
+    "flatten",
+    "array"
+  ],
+  "author": "Alexander Gromov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thundev/object-flattener/issues"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@typescript-eslint/parser": "^4.14.2",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.0",
+    "typescript": "^4.1.3"
+  }
+}
